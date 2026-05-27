@@ -12,7 +12,7 @@ author:
 
 # Subdomain config — leave url empty for relative paths; set baseurl to "" for
 # a subdomain (NOT a project-page path).
-url: "https://blog.amodelandme.dev"
+url: "https://amodelandme.dev"
 baseurl: ""
 
 # ── Build ────────────────────────────────────────────────────────────────────
