@@ -1,0 +1,46 @@
+<header class="site-header" role="banner">
+  <div class="site-header__row">
+    <a href="{{ '/' | relative_url }}" class="site-header__brand" aria-label="{{ site.title }} — home">
+      {%- include mark.svg -%}
+      <div>
+        <div class="site-header__title">{{ site.title }}</div>
+        <div class="site-header__tag">// {{ site.tagline }}</div>
+      </div>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}"
+         class="site-nav__link"
+         {% if page.url == '/' %}aria-current="page"{% endif %}>writing</a>
+      <a href="{{ '/tags/' | relative_url }}"
+         class="site-nav__link"
+         {% if page.url contains '/tags' %}aria-current="page"{% endif %}>tags</a>
+      <a href="{{ '/about/' | relative_url }}"
+         class="site-nav__link"
+         {% if page.url contains '/about' %}aria-current="page"{% endif %}>about</a>
+      <a href="https://amodelandme.dev"
+         class="site-nav__link site-nav__ext"
+         rel="noopener">amodelandme.dev</a>
+
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__moon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M13.5 9.2a5.5 5.5 0 0 1-7-7 5.5 5.5 0 1 0 7 7Z" />
+        </svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="8" cy="8" r="3" />
+          <path d="M8 1.5v1.5M8 13v1.5M1.5 8h1.5M13 8h1.5M3.3 3.3l1.1 1.1M11.6 11.6l1.1 1.1M3.3 12.7l1.1-1.1M11.6 4.4l1.1-1.1" stroke-linecap="round" />
+        </svg>
+        <span class="theme-toggle__label">theme</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="site-header__strip" aria-hidden="true">
+    <span class="site-header__live"></span>
+    <span class="amber">live</span>
+    <span>·</span>
+    <span>blog.amodelandme.dev</span>
+    <span class="site-header__strip-rule"></span>
+    <span>build · {{ site.time | date: "%Y-%m-%d" }}</span>
+  </div>
+</header>

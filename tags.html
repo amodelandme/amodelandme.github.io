@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Tags"
+permalink: /tags/
+---
+<section class="home-hero">
+  <div class="home-hero__label">02 / tags</div>
+  <div>
+    <h1 class="home-hero__title">Browse by topic.</h1>
+    <div class="home-hero__meta">
+      {%- assign tag_count = site.tags | size -%}
+      <span>{{ tag_count }} tags · {{ site.posts | size }} posts</span>
+    </div>
+  </div>
+</section>
+
+<div class="tag-index">
+  {%- assign sorted_tags = site.tags | sort -%}
+  {%- for tag in sorted_tags -%}
+    {%- assign tag_name = tag[0] -%}
+    {%- assign tag_posts = tag[1] -%}
+    <section class="tag-index__group" id="{{ tag_name | slugify }}">
+      <div class="tag-index__header">
+        <div class="tag-index__name">{{ tag_name }}</div>
+        <div class="tag-index__count">{{ tag_posts | size }} {{ tag_posts | size | pluralize: 'post', 'posts' }}</div>
+      </div>
+      <div class="post-list">
+        {%- for post in tag_posts -%}
+          <a href="{{ post.url | relative_url }}" class="post-row">
+            <div class="post-row__date">{{ post.date | date: "%Y-%m-%d" }}</div>
+            <div class="post-row__title">{{ post.title }}</div>
+            <div class="post-row__tags"></div>
+            <div class="post-row__read"></div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- endfor -%}
+</div>

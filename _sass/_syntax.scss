@@ -1,0 +1,43 @@
+// ── Rouge syntax theme ───────────────────────────────────────────────────────
+// Hand-tuned to the warm Paper/Amber palette. Two variants flip on
+// :root[data-theme="dark"]. Class names are Rouge's standard ones.
+
+.highlight {
+  // Comment
+  .c, .cm, .cp, .c1, .cs { color: var(--ink-muted); font-style: italic; }
+  // Keyword
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { color: var(--amber); }
+  // Operator
+  .o, .ow { color: var(--ink-soft); }
+  // String
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color: #6B8F62; }
+  // Number
+  .m, .mi, .mf, .mh, .mo { color: #C28543; }
+  // Name (variable, function)
+  .n  { color: var(--ink); }
+  .na { color: var(--ink-soft); }
+  .nb { color: var(--amber); }              // builtin
+  .nc { color: #4F7AAC; }                   // class name
+  .nf { color: #4F7AAC; }                   // function
+  .nn { color: var(--ink-soft); }           // namespace
+  .nt { color: var(--amber); }              // tag (xml/html)
+  .nv { color: var(--ink); }
+  // Error
+  .err { color: #B45339; background: transparent; }
+  // Punctuation
+  .p { color: var(--ink-soft); }
+}
+
+:root[data-theme="dark"] .highlight {
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color: #8FAE82; }
+  .m, .mi, .mf, .mh, .mo { color: #D89760; }
+  .nc, .nf { color: #7BA1D0; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight {
+    .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color: #8FAE82; }
+    .m, .mi, .mf, .mh, .mo { color: #D89760; }
+    .nc, .nf { color: #7BA1D0; }
+  }
+}

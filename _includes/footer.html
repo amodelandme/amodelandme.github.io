@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="site-footer__brand">
+    {%- include mark.svg -%}
+    <div>
+      // {{ site.title }}<br />
+      // © {{ site.time | date: '%Y' }} · all rights reserved
+    </div>
+  </div>
+  <div></div>
+  <div class="site-footer__links">
+    <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">
+      <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3 7a7.5 7.5 0 0 1 7.5 7.5M3 2.5a12 12 0 0 1 12 12" stroke-linecap="round" />
+      </svg>
+      rss
+    </a>
+    {%- if site.author.github -%}
+      <a href="https://github.com/{{ site.author.github }}" rel="noopener">github</a>
+    {%- endif -%}
+    {%- if site.author.linkedin -%}
+      <a href="https://linkedin.com/in/{{ site.author.linkedin }}" rel="noopener">linkedin</a>
+    {%- endif -%}
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+<div class="post-meta-strip">
+  <div class="post-meta-strip__label">post · {{ page.date | date: "%Y.%m.%d" }}</div>
+  <div>
+    <h1 class="post-meta-strip__title">{{ page.title }}</h1>
+    <div class="post-meta-strip__bar">
+      {%- assign words = content | number_of_words -%}
+      {%- assign read_minutes = words | divided_by: 220 | plus: 1 -%}
+      <span>{{ read_minutes }} min read</span>
+      {%- if page.tags.size > 0 -%}
+        <span>·</span>
+        <span style="display:inline-flex;gap:0.35rem;flex-wrap:wrap">
+          {%- for tag in page.tags -%}
+            {%- if forloop.index <= 2 -%}
+              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}"
+                 class="tag-pill tag-pill--amber">{{ tag }}</a>
+            {%- else -%}
+              <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}"
+                 class="tag-pill">{{ tag }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

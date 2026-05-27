@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" data-theme="">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body>
+    <div class="shell">
+      {%- include header.html -%}
+      <main>
+        {{ content }}
+      </main>
+      {%- include footer.html -%}
+    </div>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/callouts.js' | relative_url }}" defer></script>
+  </body>
+</html>

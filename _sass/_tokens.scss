@@ -1,0 +1,70 @@
+// ── Tokens ───────────────────────────────────────────────────────────────────
+// One source of truth for color, type, and spacing. Two palettes (light/dark)
+// expressed as CSS custom properties so the runtime theme toggle is a single
+// `data-theme="dark"` attribute on <html>.
+
+:root {
+  // Type
+  --sans: "Space Grotesk", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  // Sizes
+  --measure: 38rem;          // ~640px reading column
+  --shell-max: 80rem;        // ~1280px outer shell
+  --shell-pad: 2.5rem;       // 40px gutter
+  --shell-pad-sm: 1.25rem;   // 20px on phones
+
+  // Light palette — warm cream (pi.dev / Claude inspired)
+  --paper:       #FAF9F5;
+  --paper-deep:  #F1EFE7;
+  --paper-edge:  #E8E4D7;
+  --ink:         #1C1B18;
+  --ink-soft:    rgba(28,27,24,0.62);
+  --ink-muted:   rgba(28,27,24,0.42);
+  --ink-faint:   rgba(28,27,24,0.18);
+  --rule:        rgba(28,27,24,0.10);
+  --rule-soft:   rgba(28,27,24,0.06);
+  --amber:       #B86936;
+  --amber-soft:  rgba(184,105,54,0.10);
+  --code-bg:     #F1EFE7;
+  --callout:     #F3EFE0;
+  --selection:   rgba(184,105,54,0.22);
+}
+
+// Dark palette — warm brown-ink. Triggers off either explicit override
+// (data-theme="dark") OR system preference if no override has been set yet.
+:root[data-theme="dark"] {
+  --paper:       #1C1B18;
+  --paper-deep:  #25241F;
+  --paper-edge:  #2E2C26;
+  --ink:         #F2EFE6;
+  --ink-soft:    rgba(242,239,230,0.66);
+  --ink-muted:   rgba(242,239,230,0.42);
+  --ink-faint:   rgba(242,239,230,0.18);
+  --rule:        rgba(242,239,230,0.12);
+  --rule-soft:   rgba(242,239,230,0.07);
+  --amber:       #CC7944;
+  --amber-soft:  rgba(204,121,68,0.14);
+  --code-bg:     #13130F;
+  --callout:     #272520;
+  --selection:   rgba(204,121,68,0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:       #1C1B18;
+    --paper-deep:  #25241F;
+    --paper-edge:  #2E2C26;
+    --ink:         #F2EFE6;
+    --ink-soft:    rgba(242,239,230,0.66);
+    --ink-muted:   rgba(242,239,230,0.42);
+    --ink-faint:   rgba(242,239,230,0.18);
+    --rule:        rgba(242,239,230,0.12);
+    --rule-soft:   rgba(242,239,230,0.07);
+    --amber:       #CC7944;
+    --amber-soft:  rgba(204,121,68,0.14);
+    --code-bg:     #13130F;
+    --callout:     #272520;
+    --selection:   rgba(204,121,68,0.25);
+  }
+}

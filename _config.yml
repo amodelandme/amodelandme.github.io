@@ -1,0 +1,74 @@
+# ── Site identity ────────────────────────────────────────────────────────────
+title: "a model and me"
+tagline: "AI in the service of disciplined engineering"
+description: >-
+  Notes on harness engineering, multi-agent systems, .NET, and what AI is doing
+  to the craft. Mostly C#, mostly in public.
+author:
+  name: "a model and me"
+  email: ""
+  github: "amodelandme"
+  linkedin: "amodelandme"
+
+# Subdomain config — leave url empty for relative paths; set baseurl to "" for
+# a subdomain (NOT a project-page path).
+url: "https://blog.amodelandme.dev"
+baseurl: ""
+
+# ── Build ────────────────────────────────────────────────────────────────────
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:slug/   # /2026/05/circuit-breaker/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+  toc_levels: 2..3
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+# ── Plugins (all GitHub-Pages-allowed) ───────────────────────────────────────
+plugins:
+  - jekyll-feed       # /feed.xml
+  - jekyll-seo-tag    # SEO meta + OpenGraph
+  - jekyll-sitemap    # /sitemap.xml
+  - jekyll-paginate   # paginated index (kept off by default)
+
+# ── Defaults ─────────────────────────────────────────────────────────────────
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# ── Exclude ──────────────────────────────────────────────────────────────────
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .jekyll-cache
+
+# ── Feed / SEO ───────────────────────────────────────────────────────────────
+feed:
+  path: feed.xml
+twitter:
+  username: amodelandme
+social:
+  name: "a model and me"
+  links:
+    - https://github.com/amodelandme
+    - https://linkedin.com/in/amodelandme

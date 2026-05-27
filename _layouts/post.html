@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- include post-meta-strip.html -%}
+
+<div class="post-grid">
+  <aside class="post-grid__rail">
+    // article<br />
+    {%- assign words = content | number_of_words -%}
+    {%- assign read_minutes = words | divided_by: 220 | plus: 1 -%}
+    // {{ words }} words<br />
+    // {{ read_minutes }} min read<br />
+    <br />
+    {%- if site.github_repo -%}
+      <a href="{{ site.github_repo }}/edit/main/_posts/{{ page.path | replace: '_posts/', '' }}">edit on github →</a>
+    {%- endif -%}
+  </aside>
+
+  <article class="post-content">
+    {{ content }}
+
+    {%- if page.previous or page.next -%}
+      <nav class="post-nav">
+        {%- if page.previous -%}
+          <a href="{{ page.previous.url | relative_url }}" class="post-nav__prev">
+            <div class="post-nav__label">← previous · {{ page.previous.date | date: "%Y.%m.%d" }}</div>
+            <div class="post-nav__title">{{ page.previous.title }}</div>
+          </a>
+        {%- else -%}<span></span>{%- endif -%}
+
+        {%- if page.next -%}
+          <a href="{{ page.next.url | relative_url }}" class="post-nav__next">
+            <div class="post-nav__label">next · {{ page.next.date | date: "%Y.%m.%d" }} →</div>
+            <div class="post-nav__title">{{ page.next.title }}</div>
+          </a>
+        {%- else -%}<span></span>{%- endif -%}
+      </nav>
+    {%- endif -%}
+  </article>
+
+  <aside class="post-grid__toc">
+    <div class="post-toc__label">on this page</div>
+    <nav class="post-toc" id="post-toc" aria-label="Table of contents">
+      <!-- Built client-side from article h2/h3 by assets/js/toc.js -->
+    </nav>
+  </aside>
+</div>

@@ -1,0 +1,51 @@
+---
+layout: default
+title: "Writing"
+---
+<section class="home-hero">
+  <div class="home-hero__label">01 / writing</div>
+  <div>
+    <h1 class="home-hero__title">
+      Engineering notebook. Mostly .NET, mostly in public —
+      harness work, multi-agent patterns, complexity-theory detours.
+    </h1>
+    <div class="home-hero__meta">
+      <span>{{ site.posts | size }} posts</span>
+      <span>·</span>
+      <span>updated weekly</span>
+      <span>·</span>
+      <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">
+        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM3 7a7.5 7.5 0 0 1 7.5 7.5M3 2.5a12 12 0 0 1 12 12" stroke-linecap="round" />
+        </svg>
+        subscribe via rss
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="post-list__head" role="row">
+  <div>date</div>
+  <div>title</div>
+  <div>tags</div>
+  <div>read</div>
+</div>
+
+<div class="post-list">
+  {%- for post in site.posts -%}
+    {%- assign words = post.content | number_of_words -%}
+    {%- assign rmin = words | divided_by: 220 | plus: 1 -%}
+    <a href="{{ post.url | relative_url }}" class="post-row">
+      <div class="post-row__date">{{ post.date | date: "%Y-%m-%d" }}</div>
+      <div class="post-row__title">{{ post.title }}</div>
+      <div class="post-row__tags">
+        {%- for tag in post.tags limit: 2 -%}
+          <span class="tag-pill">{{ tag }}</span>
+        {%- endfor -%}
+      </div>
+      <div class="post-row__read">{{ rmin }}m</div>
+    </a>
+  {%- endfor -%}
+</div>
+
+<div class="end-of-feed">end of feed · {{ site.posts | size }} posts</div>
