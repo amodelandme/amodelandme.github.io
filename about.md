@@ -5,18 +5,19 @@ lede: "Engineering blog of a .NET developer thinking out loud about AI harness d
 permalink: /about/
 ---
 
-I like to build things and think about how systems work. I'm studying harnesses around language models and writing about
-what works, what doesn't, and what I wish I'd known a quarter ago. Most posts
-land in one of these buckets:
+First computer was a Gateway 2000. I installed FreeBSD... the rest is history.
 
-- **Harness engineering** — orchestration loops, tool dispatch, retry policy,
-  cost guardrails, the unglamorous plumbing.
+What I like/do/study:
+
+- **.NET 10 / C# 14 / Linux / AI** — yes, I'm a fan. Fedora, VSCode (Amp occasionally), Wezterm, and Obsidian for everything else.
+- 
+- **Harness engineering** — yup, doing this too. [Pi](https://pi.dev) is really good. I'm building my own.
+- 
 - **Multi-agent systems** — patterns borrowed from distributed systems,
   channels, and (occasionally) biology.
-- **.NET / C#** — primary stack. Records, channels, source generators,
-  Roslyn, the works.
-- **Complex adaptive systems** — when the analogy holds. Less often than
-  people think.
+
+- **Complex adaptive systems** — I think that this is where we are going with AI? Maybe? Lots of parallels.
+
 - **Build logs** — what I'm shipping this month, what broke last month.
 
 The blog runs on Jekyll and lives on GitHub Pages. Source is at
@@ -25,7 +26,6 @@ RSS at [`/feed.xml`]({{ '/feed.xml' | relative_url }}).
 
 ## Contact
 
-The main site at [amodelandme.dev](https://amodelandme.dev) has the résumé and
-contact form. Or find me on
 [LinkedIn](https://linkedin.com/in/{{ site.author.linkedin }}) /
 [GitHub](https://github.com/{{ site.author.github }}).
+

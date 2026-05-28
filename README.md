@@ -1,7 +1,7 @@
-# blog.amodelandme.dev
+# amodelandme.dev
 
-The blog. Jekyll on GitHub Pages, served at
-[blog.amodelandme.dev](https://blog.amodelandme.dev).
+Jekyll on GitHub Pages, served at
+[amodelandme.dev](https://amodelandme.dev).
 
 ```
 .
@@ -166,7 +166,7 @@ git push
 ```
 
 GitHub Pages picks it up, runs Jekyll, and the post is live at
-`https://blog.amodelandme.dev/2026/06/tool-dispatch-contention/` in
+`https://amodelandme.dev/2026/06/tool-dispatch-contention/` in
 ~30 seconds.
 
 ---
@@ -206,7 +206,7 @@ Save. GH Pages will build immediately and serve at
 
 ### C. Custom domain
 
-The `CNAME` file in this repo already says `blog.amodelandme.dev`. So:
+The `CNAME` file in this repo already says `amodelandme.dev`. So:
 
 1. **In your DNS provider** (Cloudflare, Namecheap, wherever
    `amodelandme.dev` is registered), add a `CNAME` record:
@@ -222,11 +222,11 @@ The `CNAME` file in this repo already says `blog.amodelandme.dev`. So:
    `blog` subdomain.)
 
 2. **In the repo Settings → Pages**, confirm "Custom domain" is set to
-   `blog.amodelandme.dev` and **check "Enforce HTTPS"** (may take a few
+   `amodelandme.dev` and **check "Enforce HTTPS"** (may take a few
    minutes for the cert to issue).
 
 3. **In `_config.yml`**, `url:` is already
-   `https://blog.amodelandme.dev`. Leave `baseurl:` empty for a
+   `https://amodelandme.dev`. Leave `baseurl:` empty for a
    subdomain.
 
 That's it. Push a commit, the blog is live.
@@ -241,7 +241,7 @@ The layout file marks every B-specific block with `// A:` comments
 indicating what to delete or replace. The biggest changes:
 
 1. `_includes/header.html` — delete the `<div class="site-header__strip">`
-   block at the bottom. That removes the "// live · blog.amodelandme.dev"
+   block at the bottom. That removes the "// live · amodelandme.dev"
    breadcrumb strip.
 2. `_sass/_layout.scss` — in `.post-list__head` and `.post-row`, change
    the grid template to `5rem 1fr 6rem` (drop the tags column from the
