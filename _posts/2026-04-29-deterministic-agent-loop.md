@@ -108,7 +108,7 @@ they're the only way I've found to debug a failed run two weeks later.
 
 You'll be tempted to make `RunAsync` an `IAsyncEnumerable<TraceEntry>` so
 callers can stream. Resist for v1. Streaming complicates cancellation,
-cancellation complicates the breaker (yesterday's [post]({% post_url 2026-05-22-circuit-breaker %})), the
+cancellation complicates the breaker, the
 breaker complicates everything. Ship the `Task<AgentResult>` version first.
 Stream when the product team asks for it twice.
 
