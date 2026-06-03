@@ -15,6 +15,9 @@
       <a href="{{ '/tags/' | relative_url }}"
          class="site-nav__link"
          {% if page.url contains '/tags' %}aria-current="page"{% endif %}>tags</a>
+      <a href="{{ '/projects/' | relative_url }}"
+         class="site-nav__link"
+         {% if page.url contains '/projects' %}aria-current="page"{% endif %}>projects</a>
       <a href="{{ '/about/' | relative_url }}"
          class="site-nav__link"
          {% if page.url contains '/about' %}aria-current="page"{% endif %}>about</a>
@@ -71,6 +74,9 @@
     <a href="{{ '/tags/' | relative_url }}"
        class="mobile-menu__link"
        {% if page.url contains '/tags' %}aria-current="page"{% endif %}>tags</a>
+    <a href="{{ '/projects/' | relative_url }}"
+       class="mobile-menu__link"
+       {% if page.url contains '/projects' %}aria-current="page"{% endif %}>projects</a>
     <a href="{{ '/about/' | relative_url }}"
        class="mobile-menu__link"
        {% if page.url contains '/about' %}aria-current="page"{% endif %}>about</a>
